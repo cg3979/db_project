@@ -12,42 +12,42 @@ The following ER diagram represents the database structure for the league. It in
 ```mermaid
 erDiagram
   Division {
-    int division_id PK
+    int division_id 
     string division_name
   }
 
   Teams {
-    int team_id PK
+    int team_id 
     string team_name
-    int division_id FK
+    int division_id 
   }
 
   Players {
-    int player_id PK
+    int player_id 
     string player_name
-    int team_id FK
+    int team_id 
   }
 
   Games {
-    int game_id PK
+    int game_id 
     string game_name
     date game_date
   }
 
   Seasons {
-    int season_id PK
+    int season_id 
     string season_name
   }
 
   Statistics {
-    int stat_id PK
-    int player_id FK
+    int stat_id 
+    int player_id 
     int games_played
     int goals_scored
   }
 
   Referees {
-    int referee_id PK
+    int referee_id 
     string referee_name
   }
 
