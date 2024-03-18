@@ -1,3 +1,4 @@
+ <p align="Left">text</p>
 # Application Architecture Plan & ER Model
 ## Problem 
 A group of people want to get together and start a pick-up hockey league. They want the league to feel realistic and want a way to track teams and players. This project aims to create a database for such a scenario. 
