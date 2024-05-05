@@ -13,45 +13,47 @@ The following ER diagram represents the database structure for the league. It in
 ```mermaid
 erDiagram
     Division {
-        division_id INT,
+        division_id INT PK
         division_name VARCHAR(255)
     }
     Teams {
-        team_id INT,
-        team_name VARCHAR(255),
-        division_id INT
+        team_id INT PK
+        team_name VARCHAR(255)
+        division_id INT FK
     }
     Players {
-        player_id INT,
-        first_name VARCHAR(255),
-        last_name VARCHAR(255),
-        team_id INT
+        player_id INT PK
+        first_name VARCHAR(255)
+        last_name VARCHAR(255)
+        team_id INT FK
     }
     GAMES {
-        game_id INT,
-        team_1 VARCHAR(255),
+        game_id INT PK
+        team_1 VARCHAR(255)
         team_2 VARCHAR(255)
     }
     SCORES {
-        game_id INT,
-        score_1 INT,
-        score_2 INT
+        game_id INT PK FK
+        score_1 INT NOT NULL
+        score_2 INT NOT NULL
     }
     POINTS {
-        player_id INT,
-        num_goals INT,
-        num_assists INT
+        player_id INT PK FK
+        num_goals INT NOT NULL
+        num_assists INT NOT NULL
     }
     STANDINGS {
-        team_id INT,
-        games_won INT,
-        games_lost INT,
-        pts_total INT
+        team_id INT PK FK
+        games_won INT NOT NULL
+        games_lost INT NOT NULL
+        pts_total INT NOT NULL
     }
-    Division ||--o| Teams : "division_id"
-    Teams ||--o| Players : "team_id"
-    Teams ||--o| STANDINGS : "team_id"
-    Players ||--o| POINTS : "player_id"
-    GAMES ||--| SCORES : "game_id"
+    Division ||--o{ Teams : "division_id"
+    Teams ||--o{ Players : "team_id"
+    Teams ||--o{ GAMES : "team_1, team_2"
+    GAMES ||--o{ SCORES : "game_id"
+    Players ||--o{ POINTS : "player_id"
+    Teams ||--o{ STANDINGS : "team_id"
+
 
 ```
