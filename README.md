@@ -48,10 +48,9 @@ erDiagram
         games_lost INT,
         pts_total INT
     }
-    Division ||--o| Teams : "Division_id"
-    Teams ||--o| Players : "Team_id"
-    Teams ||--o| STANDINGS : "Team_id"
-    Players ||--o| POINTS : "Player_id"
-    GAMES ||--| SCORES : "Game_id"
-
+    Division ||--o| Teams : "division_id"
+    Teams ||--o| Players : "team_id"
+    Teams ||--o| STANDINGS : "team_id"
+    Players ||--o| POINTS : "player_id"
+    GAMES ||--| SCORES : "game_id"
 ```
