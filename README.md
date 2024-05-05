@@ -12,50 +12,46 @@ The following ER diagram represents the database structure for the league. It in
 
 ```mermaid
 erDiagram
-  Division {
-    int division_id 
-    string division_name
-  }
+    Division {
+        division_id INT,
+        division_name VARCHAR(255)
+    }
+    Teams {
+        team_id INT,
+        team_name VARCHAR(255),
+        division_id INT
+    }
+    Players {
+        player_id INT,
+        first_name VARCHAR(255),
+        last_name VARCHAR(255),
+        team_id INT
+    }
+    GAMES {
+        game_id INT,
+        team_1 VARCHAR(255),
+        team_2 VARCHAR(255)
+    }
+    SCORES {
+        game_id INT,
+        score_1 INT,
+        score_2 INT
+    }
+    POINTS {
+        player_id INT,
+        num_goals INT,
+        num_assists INT
+    }
+    STANDINGS {
+        team_id INT,
+        games_won INT,
+        games_lost INT,
+        pts_total INT
+    }
+    Division ||--o| Teams : "Division_id"
+    Teams ||--o| Players : "Team_id"
+    Teams ||--o| STANDINGS : "Team_id"
+    Players ||--o| POINTS : "Player_id"
+    GAMES ||--| SCORES : "Game_id"
 
-  Teams {
-    int team_id 
-    string team_name
-    int division_id 
-  }
-
-  Players {
-    int player_id 
-    string player_name
-    int team_id 
-  }
-
-  Games {
-    int game_id 
-    string game_name
-    date game_date
-  }
-
-  Seasons {
-    int season_id 
-    string season_name
-  }
-
-  Statistics {
-    int stat_id 
-    int player_id 
-    int games_played
-    int goals_scored
-  }
-
-  Referees {
-    int referee_id 
-    string referee_name
-  }
-
-  Division  ||--o{ Teams : has
-  Teams ||--o{ Players : has
-  Teams ||--o{ Games : participates
-  Players ||--o{ Statistics : records
-  Games ||--o{ Seasons : occurs_in
-  Games ||--o{ Referees : officiated_by
 ```
