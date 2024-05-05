@@ -8,7 +8,7 @@ It is possible for a two-tier or a three-tier approach for this project. The two
 
 ## ER Diagram
 
-The following ER diagram represents the database structure for the league. It includes the following entities: Division, Teams, Games, Players, Seasons, Statistics, and Referees along with their relationships. 
+The following ER diagram represents the database structure for the league. It includes the following entities: Division, Teams, Players, Games, Scores, Points, and Standings along with their relationships. 
 
 ```mermaid
 erDiagram
