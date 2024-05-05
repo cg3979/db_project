@@ -35,21 +35,21 @@ erDiagram
   SCORES {
     score_id INT PK
     game_id INT FK
-    score_1 INT NOT NULL
-    score_2 INT NOT NULL
+    score_1 INT
+    score_2 INT
   }
   POINTS {
     points_id INT PK
     player_id INT FK
-    num_goals INT NOT NULL
-    num_assists INT NOT NULL
+    num_goals INT 
+    num_assists INT
   }
   STANDINGS {
     standings_id INT PK
     team_id INT FK
-    games_won INT NOT NULL
-    games_lost INT NOT NULL
-    pts_total INT NOT NULL
+    games_won INT 
+    games_lost INT
+    pts_total INT 
   }
   Division  ||--o{ Teams : "has"
   Teams ||--o{ Players : "has"
