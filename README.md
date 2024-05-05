@@ -53,4 +53,5 @@ erDiagram
     Teams ||--o| STANDINGS : "team_id"
     Players ||--o| POINTS : "player_id"
     GAMES ||--| SCORES : "game_id"
+
 ```
