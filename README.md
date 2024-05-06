@@ -4,7 +4,7 @@
 A group of people want to get together and start a pick-up hockey league. They want the league to feel realistic and want a way to track teams and players. This project aims to create a database for such a scenario and the details below provide a high-level view. 
 
 ## Architecture 
-It is possible for a two-tier or a three-tier approach for this project. The two-tier provides more simplicity while the three-tier would be more complex but could be used for a web-based applicaition for the league. 
+For the purposes of this project, Google Colab was used to construct a Jupyter notebook that created a website (GUI) for running and viewing queries. The HTML template and the SQL database file that were necessary to create the webiste were sourced from my github. 
 
 ## ER Diagram
 
